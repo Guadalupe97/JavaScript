@@ -112,7 +112,7 @@ if (23 == "23"){
 */
 
 //Lecture: boolean logic and switch
-
+/*
 var age = 20;
 
 if (age < 20){
@@ -142,5 +142,53 @@ switch(job){
     default:
         console.log('John does something else.');
 }
+*/
+
+//SOLUTION 
+
+var heightJohn = 180;
+var heigtMike = 165;
+var ageJohn = 26;
+var ageMike = 29;
+
+var scoreJohn = heightJohn + 5 * ageJohn
+;
+
+var scoreMike = heigtMike + 5 * ageMike;
+
+/*
+if(scoreJohn > scoreMike){
+    console.log('John wins the game with ' + scoreJohn + 'points');
+}
+
+else if(scoreMike > scoreJohn){
+     console.log('Mike wins the game with ' + scoreMike + 'points');
+}
+else if (scoreJohn === scoreMike){
+    console.log('There is a draw');
+}
+*/
+
+var heightMary = 158;
+var ageMary = 31;
+var ScoreMary = heightMary + 5 * ageMary;
+
+if(scoreJohn > scoreMike && scoreJohn > ScoreMary){
+   console.log('John wins the game with ' + scoreJohn + 'points');
+}
+
+else if (scoreMike > scoreJohn && scoreMike > ScoreMary){
+  console.log('Mike wins the game with ' + scoreMike + 'points');
+}
+
+else if (ScoreMary > scoreJohn && ScoreMary > scoreMike){
+  console.log('Mary wins the game with ' + ScoreMary + 'points');
+}
+
+else {
+    console.log('It\' a draw.');
+} 
+
+
 
 
