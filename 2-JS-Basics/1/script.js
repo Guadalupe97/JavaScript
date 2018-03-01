@@ -349,7 +349,7 @@ var john = {
 */
 
 //Lecture: Loops
-
+    /*
     for (var i = 0; i < 10; i++){
         console.log(i);
     }
@@ -362,10 +362,10 @@ var john = {
     .
     9, true, print 0, update i to 10
     10, False, end loop!
-    */
+
     
     var names = ['John', 'Jane', 'Mary', 'Mark', 'Bob'];
-
+    */
     // for loops
     /*
     for (var i = 0; i < names.length; i++){
@@ -378,6 +378,7 @@ var john = {
     */
 
     //while loops
+/*
     var i = 0;
     while (i < names.length){
         console.log(names[i]);
@@ -398,6 +399,8 @@ var john = {
         }
         console.log(i);
     }
+*/
+
 
     
 

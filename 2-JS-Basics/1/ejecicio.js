@@ -1,4 +1,4 @@
-var john = 20;
+/*var john = 20;
 var luis = 20;
 var hugo = 20;
 var john2 = 170;
@@ -35,3 +35,24 @@ else
     {
     console.log('Todos Ganan');
 }
+*/
+
+//Ejercicio 2
+
+    var años =[1990,1997,2005,2017];
+    var vacio = [];
+    
+    for (i = 0; i < 4; i++){
+        vacio[i] = 2018 - años[i];
+    }
+
+    for (i = 0; i < 4; i++){
+        if (vacio[i] >=18){
+            console.log('Su edad es ' + vacio[i] + ',' + ' es mayor de edad');
+        }
+        else{
+            console.log('Su edad es ' + vacio[i] + ',' + ' es menor de edad');
+        }
+    }
+
+
