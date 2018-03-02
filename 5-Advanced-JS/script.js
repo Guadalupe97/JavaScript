@@ -140,7 +140,7 @@ function arrayCalc(arr, fn) {
     */
 
     //Lecture: Funciones devolviendo funciones
-
+    /*
     function interviewQuestion(job){
         if (job === 'designer'){
             return function(name){
@@ -172,3 +172,34 @@ function arrayCalc(arr, fn) {
 
     // Con esta linea se ahorra toda la parte de arriba de la declaración de variables
     interviewQuestion('teacher')('Mark');
+    */
+
+    //Lecture: IIEF
+    /*
+    function game(){
+        var score = Math.random() * 10;
+        console.log(score >= 5);
+    }
+
+    game();
+    */
+    //IIEF
+    (function (){
+         var score = Math.random() * 10;
+        console.log(score >= 5);
+    })();
+        
+    //console.log(score);
+
+    (function (goodluck){
+         var score = Math.random() * 10;
+        console.log(score >= 5 - goodluck);
+    })(5);
+
+    /*
+    //IIEF ES2015
+    {
+        let score = Math.random() * 10;
+        console.log(score >= 5);
+    }
+    */
