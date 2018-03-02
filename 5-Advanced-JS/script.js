@@ -205,7 +205,7 @@ function arrayCalc(arr, fn) {
     */
 
     // Lecture: Closures
-
+    /*
     function retirement(retirementAge){
         var a = ' Años restantes hasta la jubilación.';
         return function(yearOfBirth){
@@ -242,8 +242,8 @@ function arrayCalc(arr, fn) {
             
         }
         
-    }*/
-
+    */
+    /*
     function interviewQuestion(job){
         return function(name){
             if (job === 'designer'){
@@ -261,3 +261,72 @@ function arrayCalc(arr, fn) {
 
     interviewQuestion('teacher')('John');
     interviewQuestion('designer')('John');
+    */
+
+    //Lecture: Bind, call and apply methods
+
+    var john = {
+        name: 'John',
+        age: 26,
+        job: 'maestro',
+        presentation: function(style, timeOfDay){
+            if (style === 'formal'){
+                console.log('Buenos ' + timeOfDay + ', Damas y caballeros! Yo soy ' + this.name + ', Soy ' + this.job + ' y tengo ' + this.age + ' años');
+            }
+            else if(style === 'friendly')
+            {
+                console.log('Hey que pasa?, Yo soy ' + this.job + ' y tengo ' + this.age + ' años. Buenas ' + timeOfDay + '.');
+            }
+        }
+    };
+
+        var emily = {
+            name: 'Emily',
+            age: 35,
+            job: 'diseñadora'
+        };
+
+    
+        john.presentation('formal', 'días');
+
+        john.presentation.call(emily, 'friendly', 'tardes');
+
+        //john.presentation.apply(emily, ['friendly']);
+
+        var johnFriendly = john.presentation.bind(john, 'friendly');
+
+        johnFriendly('días');
+        johnFriendly('noches');
+
+        var emilyFormal = john.presentation.bind(emily, 'formal');
+        emilyFormal('tardes');
+
+
+
+
+var years = [1990, 1965, 1937, 2005, 1998];
+
+function arrayCalc(arr, fn) {
+    var arrRes = [];
+    for (var i = 0; i < arr.length; i++){
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
+
+    function calculateAge(el) {
+        return 2016 - el;
+    }
+
+    function isFullAge(limit, el) {
+        return el >= limit;
+    }
+
+    var ages = arrayCalc(years, calculateAge);
+
+    var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+    console.log(ages);
+    console.log(fullJapan);
+
+
+
