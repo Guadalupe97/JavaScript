@@ -102,7 +102,7 @@ console.log(obj.city);
 */
 
 //Lecture: Passing functions as arguments 
-
+/*
 var years = [1990, 1965, 1937, 2005, 1998];
 
 function arrayCalc(arr, fn) {
@@ -137,4 +137,38 @@ function arrayCalc(arr, fn) {
 
     console.log(ages);
     console.log(rates);
+    */
+
+    //Lecture: Funciones devolviendo funciones
+
+    function interviewQuestion(job){
+        if (job === 'designer'){
+            return function(name){
+                console.log(name + ', Puedes explicar tu experiencia diseñando?');
+            }
+        }
+        else if (job === 'teacher'){
+                return function(name){
+                    console.log('Que materia enseñas, ' + name + '?');
+                }
+            }
+        else { return function(name){
+            console.log('Hello' + name + ', que haces?');
+        }
+            
+        }
+        
+    }
+
+    var teacherQuestion = interviewQuestion('teacher');
+    var designerQuestion = interviewQuestion('designer');
     
+
+    teacherQuestion('John');
+    designerQuestion('John');
+    designerQuestion('Jane');
+    designerQuestion('Mark');
+    designerQuestion('Mike');
+
+    // Con esta linea se ahorra toda la parte de arriba de la declaración de variables
+    interviewQuestion('teacher')('Mark');
