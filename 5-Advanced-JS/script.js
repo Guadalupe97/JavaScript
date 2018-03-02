@@ -182,7 +182,7 @@ function arrayCalc(arr, fn) {
     }
 
     game();
-    */
+    /*
     //IIEF
     (function (){
          var score = Math.random() * 10;
@@ -203,3 +203,61 @@ function arrayCalc(arr, fn) {
         console.log(score >= 5);
     }
     */
+
+    // Lecture: Closures
+
+    function retirement(retirementAge){
+        var a = ' Años restantes hasta la jubilación.';
+        return function(yearOfBirth){
+            var age = 2016 - yearOfBirth;
+            console.log((retirementAge - age) + a);
+        }
+    }
+
+    var retirementUS = retirement(66);
+    var retirementGermany = retirement(65);
+    var retirementIceLand = retirement(67);
+
+    retirementGermany(1990);
+    retirementUS(1990);
+    retirementIceLand(1990);
+    
+    //retirement(66)(1990);
+
+     /*
+    function interviewQuestion(job){
+        if (job === 'designer'){
+            return function(name){
+                console.log(name + ', Puedes explicar tu experiencia diseñando?');
+            }
+        }
+        else if (job === 'teacher'){
+                return function(name){
+                    console.log('Que materia enseñas, ' + name + '?');
+                }
+            }
+        else { return function(name){
+            console.log('Hello' + name + ', que haces?');
+        }
+            
+        }
+        
+    }*/
+
+    function interviewQuestion(job){
+        return function(name){
+            if (job === 'designer'){
+                  console.log(name + ', Puedes explicar tu experiencia diseñando?');
+            }
+            else if ( job === 'teacher'){
+                   console.log('Que materia enseñas, ' + name + '?');
+            }
+            else{
+            console.log('Hello' + name + ', que haces?');            
+            }
+        }
+    
+    }
+
+    interviewQuestion('teacher')('John');
+    interviewQuestion('designer')('John');
