@@ -519,7 +519,7 @@ Person6.greeting();
 */
 
 //Classes and subclasses
-
+/*
 var Person5 = function(name, yearOfBirth, job){
     this.name = name;
     this.yearOfBirth = yearOfBirth;
@@ -580,3 +580,4 @@ const johnAthlete6 = new Athlete6 ('John', 1990, 'swimmer', 3, 10);
 
 johnAthlete6.wonMedal();
 johnAthlete6.calculateAge();
+*/
